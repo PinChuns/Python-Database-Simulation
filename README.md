@@ -1,20 +1,20 @@
-# Python Database-Simulation（JAVA Database-Simulation 簡化版改寫）
+# Python Database-Simulation（JAVA Database-Simulation Simplified Rewrite）
 
-將原本的 Java `DBServer` 改寫成 Python，作為 socket-based 的簡易資料庫伺服器。
+Reimplemented the original Java `DBServer` in Python as a simple socket-based database server.
 
-## 執行方式
+## How to Run
 
-啟動伺服器：
+Start the Server：
 ```bash
 python3 db_server.py
 ```
 
-另開一個終端機，啟動 client 測試：
+Open Another Terminal and Start the Client for Testing：
 ```bash
 python3 db_client.py
 ```
 
-## 支援的指令（簡化版）
+## Supported Commands (Simplified Version)
 
 - `CREATE DATABASE dbname;`
 - `USE dbname;`
@@ -22,9 +22,9 @@ python3 db_client.py
 - `INSERT INTO tablename VALUES ('v1', 'v2', ...);`
 - `SELECT * FROM tablename;`
 - `SELECT * FROM tablename WHERE col op value;`
-  - 支援運算子：`==`、`!=`、`>`、`<`、`>=`、`<=`、`like`
+  - Supported Operation：`==`、`!=`、`>`、`<`、`>=`、`<=`、`like`
 
-## 範例
+## Examplte
 
 ```
 SQL:> CREATE DATABASE school;
@@ -41,13 +41,13 @@ id	name	age
 1	Alice	20
 ```
 
-## 尚未實作（原 Java 版有，這裡先省略，之後可再補）
+## Not Yet Implemented (Available in the Original Java Version)
 
 - `DROP` / `ALTER` / `UPDATE` / `DELETE` / `JOIN`
 - `SELECT` 指定欄位（目前只支援 `SELECT *`）
 - 多重條件（`AND` / `OR`）
 
-## 已完成並經人工測試驗證的函式
+## Implemented and Tested Functions
 
 - `check_name`：驗證資料庫/表格名稱合法性
 - `spilt_token`：SQL 指令 tokenizer（含引號字串、雙字元運算子處理）
